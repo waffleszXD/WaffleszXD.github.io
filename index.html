@@ -3,63 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
-  <title>Waffles bio!!</title>               <img src="https://count.getloli.com/@:mmmnnnn?theme=kyun" alt=":name" />
+  <title>Waffles bio!!</title>
+  <img src="https://count.getloli.com/@:mmmnnnn?theme=kyun" alt=":name" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .typing {
+      white-space: pre-wrap;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
 </head>
+
 <body>
   <div id="wrapper" class="container-fluid">
     <header>
       <h1 class="title">Waffles.bio</h1>
     </header>
-      <!-- COLUMNS -->
-      <div class="row">
+
+    <div class="row">
+
       <!-- COLUMN ONE -->
       <div class="centered col-xs-12 col-sm-6">
         <ul class="consoles">
           <li>Intro!!</li>
-          <li id="console">
-              Haii my name is waffles!! 
+
+          <li id="intro" class="typing"
+              data-text="Haii my name is waffles!! 
 I lov talking and making friends :3
-I try to be as nice as possible :P
+I try to be as nice as possible :P">
           </li>
+
           <li>pronouns :O</li>
-          <li>He/Him</li>
+          <li id="pronouns" class="typing" data-text="He/Him"></li>
+
           <li>Sexuality</li>
           <img src="https://iili.io/B1pZqW7.md.webp" />
+
           <li>status <3</li>
           <li>Single :c</li>
+
           <li>Intrestsss</li>
-          <li>Music, Anyting technology, and gaming!!!</li>
+          <li id="interests" class="typing"
+              data-text="Music, Anyting technology, and gaming!!!">
+          </li>
+
           <li>Pic of me ^v^</li>
           <img src="https://iili.io/B1pjjaa.md.jpg" alt="Waffles.png" />
         </ul>
       </div>
-        <!-- COLUMN TWO -->
-        <div class="centered col-xs-12 col-sm-6">
+
+      <!-- COLUMN TWO -->
+      <div class="centered col-xs-12 col-sm-6">
         <ul class="consoles">
           <li>Socials!!</li>
-          <li id="console">Discord: Waffless.
+
+          <li>Discord: Waffless.
             Insta: waffleszzs
           </li>
+
           <li>My fav tyler album!!</li>
-          <li><iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/call-me-if-you-get-lost-the-estate-sale/1679454273"></iframe></li>
+
+          <li>
+            <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              frameborder="0" height="450"
+              style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/call-me-if-you-get-lost-the-estate-sale/1679454273"></iframe>
+          </li>
+
           <li>Quotes!!</li>
-          <li>.: “To tell the truth, I’m at a loss of friends” Earl Sweatshirt
- .: “I might die twice if I look down and see my mama in tears” Freddie Gibbs
- .: “Something put my feelings in the lost and found” Tyler The, Creator
- .: “Life's a b###h and then you die” Nas</li>
+          <li id="quotes" class="typing"
+              data-text=".: “To tell the truth, I’m at a loss of friends” Earl Sweatshirt
+.: “I might die twice if I look down and see my mama in tears” Freddie Gibbs
+.: “Something put my feelings in the lost and found” Tyler, The Creator
+.: “Life's a b###h and then you die” Nas">
+          </li>
+
           <li>DMs</li>
           <li>Openn!!!</li>
+
           <li>Kibby :3</li>
           <img class="image2" src="https://iili.io/BEHPefe.md.jpg" alt="" />
+
           <li>Thanksss</li>
-          <li>Thank uuu for looking at my bio!!!
-            <iframe src="https://waffless.atabook.org/" height="200" width="300" title="Iframe Example"></iframe>
+          <li>
+            Thank uuu for looking at my bio!!!
+            <iframe src="https://waffless.atabook.org/" height="200" width="300"></iframe>
           </li>
         </ul>
+
         <div class="elevator-button">Back to Top</div>
+
+<script>
+/* typing system */
+function typeElement(el, text, speed = 20) {
+  let i = 0;
+  el.textContent = "";
+
+  function type() {
+    if (i < text.length) {
+      el.textContent += text[i];
+      i++;
+      setTimeout(type, speed + Math.random() * 20);
+    }
+  }
+  type();
+}
+
+window.addEventListener("load", () => {
+  const items = [
+    document.getElementById("intro"),
+    document.getElementById("pronouns"),
+    document.getElementById("interests"),
+    document.getElementById("quotes")
+  ];
+
+  let delay = 400;
+
+  items.forEach((el) => {
+    if (!el) return;
+
+    const text = el.getAttribute("data-text");
+
+    setTimeout(() => {
+      typeElement(el, text);
+    }, delay);
+
+    delay += text.length * 12; // stagger timing
+  });
+});
+</script>
 
 <script>
 // Elevator script included on the page, already.
@@ -72,12 +155,15 @@ window.onload = function() {
   });
 }
 </script>
+
       </div>
-      </div>
+    </div>
+
     <footer>
       <h2 class="end"></h2>
     </footer>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="index.js"></script>
 </body>
